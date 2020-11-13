@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd"> 
+
+<mapper namespace="com.ksptooi.ge.mapper.PlayerMapper">
+
+
+    <select id="getPlayerById" resultType="com.ksptooi.ge.entity.Player">
+        select * from player where id=#{id}
+    </select>
+
+    <select id="getPlayerByName" resultType="com.ksptooi.ge.entity.Player">
+        select * from player where name=#{name}
+    </select>
+
+    <update id="updatePlayer">
+        update player set name=#{name},health=#{health}
+    </update>
+
+    <insert id="insertPlayer">
+        insert into player(name,health)values(#{name},#{health})
+    </insert>
+
+
+</mapper>
